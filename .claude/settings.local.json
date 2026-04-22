@@ -18,7 +18,18 @@
       "Bash(npm run *)",
       "Bash(npx supabase *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git config *)",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__list_migrations",
+      "mcp__28be3b1b-3f87-4df7-b5f1-2f057b46dd09__deploy_to_vercel",
+      "Bash(env)",
+      "Bash(npx --no-install vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel link *)",
+      "Bash(vercel env *)",
+      "Bash(vercel deploy *)",
+      "Bash(npm view *)",
+      "Bash(npm audit *)"
     ]
   }
 }
