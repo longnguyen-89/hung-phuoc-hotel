@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(./node_modules/.bin/tsc --noEmit)",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__list_organizations",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__list_projects",
+      "mcp__28be3b1b-3f87-4df7-b5f1-2f057b46dd09__list_teams",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__get_cost",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__confirm_cost",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__create_project",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__pause_project",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__get_project_url",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__get_publishable_keys",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__apply_migration",
+      "mcp__aeba622b-f421-4a4a-b5bd-89d43d19182e__execute_sql",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx supabase *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
