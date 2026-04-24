@@ -49,6 +49,31 @@ INSERT INTO room_types (id, property_id, code, name, price_per_day, price_per_ho
   ('c1000001-0000-0000-0000-000000000009', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP000033', 'PHÒNG SUITE 2',               680000, 140000, 500000, 2, 3, 9),
   ('c1000001-0000-0000-0000-000000000010', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP000041', 'Bán Dịch Vụ',                      0,      0,      0, 0, 0, 99);
 
+-- -------------------- PRODUCTS / MINIBAR --------------------
+INSERT INTO products (
+  id, property_id, sku, name, kind, category, unit,
+  default_price, cost_price, track_inventory, stock_quantity
+) VALUES
+  ('d1000001-0000-0000-0000-000000000001', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-MN-WATER', 'Nước suối 500ml', 'stock', 'Minibar', 'chai', 10000, 4000, true, 200),
+  ('d1000001-0000-0000-0000-000000000002', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-MN-COKE', 'Nước ngọt lon', 'stock', 'Minibar', 'lon', 15000, 7000, true, 120),
+  ('d1000001-0000-0000-0000-000000000003', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-MN-NOODLE', 'Mì ly', 'stock', 'Minibar', 'ly', 20000, 9000, true, 80),
+  ('d1000001-0000-0000-0000-000000000004', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-SV-LAUNDRY', 'Giặt ủi', 'service', 'Dịch vụ', 'kg', 30000, 0, false, 0),
+  ('d1000001-0000-0000-0000-000000000005', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-SC-EARLY', 'Phụ thu nhận phòng sớm', 'surcharge', 'Phụ thu', 'lượt', 50000, 0, false, 0),
+  ('d1000001-0000-0000-0000-000000000006', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-SC-LATE', 'Phụ thu trả phòng muộn', 'surcharge', 'Phụ thu', 'giờ', 50000, 0, false, 0),
+  ('d1000001-0000-0000-0000-000000000007', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'HP-SC-DAMAGE', 'Bồi thường hư hỏng', 'surcharge', 'Phụ thu', 'lượt', 0, 0, false, 0);
+
+INSERT INTO room_type_minibar_items (room_type_id, product_id, default_quantity, sale_price, sort_order)
+SELECT rt.id, p.product_id, p.default_quantity, p.sale_price, p.sort_order
+FROM room_types rt
+CROSS JOIN (
+  VALUES
+    ('d1000001-0000-0000-0000-000000000001'::uuid, 2::numeric, 10000::numeric, 1),
+    ('d1000001-0000-0000-0000-000000000002'::uuid, 2::numeric, 15000::numeric, 2),
+    ('d1000001-0000-0000-0000-000000000003'::uuid, 1::numeric, 20000::numeric, 3)
+) AS p(product_id, default_quantity, sale_price, sort_order)
+WHERE rt.property_id = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+  AND rt.business_status::text <> 'selling_service';
+
 -- -------------------- ROOMS (41 + 5) --------------------
 -- Ghi chú phân bổ dựa trên ảnh Hưng Phước cung cấp:
 -- Tầng 5 (8): 501 Standard · 502 Apartment · 503 Std Triple · 504 Family · 505 Deluxe · 506 Superior · 507 Family · 508 Standard

@@ -9,6 +9,45 @@ export type TaskStatus =
   | "rejected"
   | "cancelled";
 export type BookingStatus = "upcoming" | "checked_in" | "checked_out" | "cancelled";
+export type RoomOccupancyStatus = "vacant" | "reserved" | "occupied" | "blocked" | "out_of_order";
+export type RoomHousekeepingStatus =
+  | "clean"
+  | "dirty"
+  | "cleaning"
+  | "inspection_pending"
+  | "inspected"
+  | "maintenance";
+export type ReservationStatus =
+  | "pending_confirmation"
+  | "reserved"
+  | "checked_in"
+  | "partial_checked_out"
+  | "checked_out"
+  | "cancelled"
+  | "no_show";
+export type ReservationRoomStatus = "reserved" | "checked_in" | "checked_out" | "cancelled" | "no_show";
+export type StayType = "hourly" | "daily" | "overnight" | "session" | "monthly";
+export type ProductKind = "stock" | "service" | "surcharge";
+export type InventoryMovementType =
+  | "initial"
+  | "import"
+  | "consume"
+  | "adjustment"
+  | "damage"
+  | "waste"
+  | "return";
+export type FolioStatus = "open" | "partially_paid" | "paid" | "void" | "refunded";
+export type FolioLineType =
+  | "room_charge"
+  | "service"
+  | "minibar"
+  | "surcharge"
+  | "discount"
+  | "service_charge"
+  | "vat"
+  | "damage"
+  | "adjustment";
+export type InspectionStatus = "requested" | "in_progress" | "completed" | "confirmed" | "cancelled";
 export type TaskType = "turnover" | "deep_clean" | "maintenance_clean";
 export type TaskPriority = "low" | "normal" | "high" | "critical";
 export type DirtyLevel = "light" | "normal" | "heavy";
