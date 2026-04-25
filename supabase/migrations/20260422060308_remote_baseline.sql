@@ -1,0 +1,5 @@
+-- Remote baseline placeholder.
+--
+-- The linked Supabase project already records this migration version in
+-- supabase_migrations.schema_migrations. Keep this file so local migration
+-- history matches the cloud project before applying newer migrations.

@@ -10,7 +10,12 @@ Trinh duyet trong app dang o `https://hotel.kiotviet.vn/khachsanhungphuoc/#/Dash
 
 ## Da lam trong giai doan 1
 
-- Them migration `supabase/migrations/0004_front_desk_core.sql`.
+- Them migration `supabase/migrations/20260425142000_front_desk_core.sql`.
+- Dong bo ten migration local theo lich su Supabase Cloud:
+  - `0001_init.sql` -> `20260422060115_init.sql`
+  - `0002_storage.sql` -> `20260422060127_storage.sql`
+  - `0003_hotel.sql` -> `20260422060206_hotel.sql`
+  - Them 2 placeholder `20260422060308_remote_baseline.sql` va `20260422060325_remote_baseline.sql` vi Cloud da ghi nhan 2 version nay truoc do.
 - Tach trang thai phong moi thanh `occupancy_status` va `housekeeping_status`, giu lai `rooms.status` cu de UI hien tai khong vo.
 - Them cac enum va bang loi:
   - `reservations`
