@@ -1,0 +1,7 @@
+.claude
+AGENTS.md
+.git
+.next
+.env
+.env.local
+*.log
