@@ -53,6 +53,7 @@ Trinh duyet trong app dang o `https://hotel.kiotviet.vn/khachsanhungphuoc/#/Dash
 - Vercel production da deploy tai `https://hung-phuoc-hotel.vercel.app`.
 - Supabase project da link voi ref `aicxuokqwqxwhvwwkjpj`.
 - Migration schema `20260425142000_front_desk_core.sql` da duoc apply len Supabase Cloud ngay 2026-04-26.
+- Migration seed `20260426031500_seed_front_desk_products.sql` da duoc apply len Supabase Cloud ngay 2026-04-26.
 
 ## Chua doi trong giai doan 1
 
