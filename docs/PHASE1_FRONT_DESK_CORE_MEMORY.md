@@ -43,7 +43,16 @@ Trinh duyet trong app dang o `https://hotel.kiotviet.vn/khachsanhungphuoc/#/Dash
 - Them view doc nhanh cho man hinh le tan:
   - `v_front_desk_rooms`
 - Cap nhat `supabase/seed.sql` voi san pham mau cho minibar/dich vu/phu thu va cau hinh minibar mac dinh theo hang phong.
+- Them migration `supabase/migrations/20260426031500_seed_front_desk_products.sql` de dua san pham/minibar mau len Supabase Cloud, vi `supabase db push` khong chay `seed.sql`.
 - Cap nhat `lib/types.ts` voi cac union type tuong ung schema moi.
+
+## Trang thai day len moi truong
+
+- GitHub da co remote `https://github.com/longnguyen-89/hung-phuoc-hotel.git`.
+- Branch `main` va `codex/phase1-front-desk-core` da push len GitHub.
+- Vercel production da deploy tai `https://hung-phuoc-hotel.vercel.app`.
+- Supabase project da link voi ref `aicxuokqwqxwhvwwkjpj`.
+- Migration schema `20260425142000_front_desk_core.sql` da duoc apply len Supabase Cloud ngay 2026-04-26.
 
 ## Chua doi trong giai doan 1
 
