@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   Home,
+  KeyRound,
   BedDouble,
   CalendarDays,
   ClipboardList,
@@ -18,6 +19,7 @@ import { LogoutButton } from "./_components/logout-button";
 
 const nav = [
   { href: "/dashboard", label: "Dashboard", icon: Home },
+  { href: "/front-desk", label: "Lễ tân", icon: KeyRound },
   { href: "/rooms-map", label: "Sơ đồ phòng", icon: LayoutGrid },
   { href: "/room-types", label: "Hạng phòng", icon: Tags },
   { href: "/rooms", label: "Phòng", icon: BedDouble },

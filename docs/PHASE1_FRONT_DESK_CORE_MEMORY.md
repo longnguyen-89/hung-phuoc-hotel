@@ -1,6 +1,6 @@
 # Ghi nho tien trinh - Giai doan 1 Front Desk Core
 
-Ngay cap nhat: 2026-04-24
+Ngay cap nhat: 2026-04-26
 
 ## Boi canh
 
@@ -54,20 +54,33 @@ Trinh duyet trong app dang o `https://hotel.kiotviet.vn/khachsanhungphuoc/#/Dash
 - Supabase project da link voi ref `aicxuokqwqxwhvwwkjpj`.
 - Migration schema `20260425142000_front_desk_core.sql` da duoc apply len Supabase Cloud ngay 2026-04-26.
 - Migration seed `20260426031500_seed_front_desk_products.sql` da duoc apply len Supabase Cloud ngay 2026-04-26.
+- Migration sync status `20260426033000_sync_room_legacy_status.sql` da duoc apply len Supabase Cloud ngay 2026-04-26.
 
 ## Chua doi trong giai doan 1
 
-- Chua thay UI owner hien tai. Cac man hinh cu van chay tren `bookings`, `payments`, `rooms.status`.
-- Chua them route `/front-desk`.
+- Da bat dau thay UI owner bang route `/front-desk`; cac man hinh cu van chay tren `bookings`, `payments`, `rooms.status`.
 - Chua thay booking API sang ghi truc tiep `reservations`/`folios`; hien tai migration mirror giup model moi bat kip du lieu cu.
 - Chua chay `npm run db:reset` vi lenh nay pha huy du lieu local.
 
+## Da lam trong giai doan 2
+
+- Them route owner `app/(owner)/front-desk/page.tsx` dua tren view `v_front_desk_rooms`.
+- Them menu trai `Le tan` tro den `/front-desk`.
+- Man hinh moi hien:
+  - KPI dang o / da giu / san sang ban / can xu ly / cong no dang o.
+  - So do phong theo tang voi mau trang thai `occupancy_status` va `housekeeping_status`.
+  - Thong tin khach dang o, gio tra phong, cong no, booking sap den.
+  - Danh sach nhanh tra phong gan nhat va booking sap den.
+  - Nut `Tao booking moi` dung lai modal booking hien co.
+- Them migration `20260426033000_sync_room_legacy_status.sql` de dong bo `occupancy_status` / `housekeeping_status` khi cac API cu tiep tuc ghi `rooms.status`.
+- Da chay thanh cong:
+  - `npx tsc --noEmit`
+  - `npm run build`
+
 ## Huong tiep theo
 
-Giai doan 2 nen dung man hinh `/front-desk` dua tren `v_front_desk_rooms`:
-
-1. So do phong theo tang/hang phong voi mau trang thai moi.
-2. Drawer thao tac phong: dat phong, nhan phong, tra phong, them dich vu/minibar, chuyen phong.
+1. Commit/push branch va deploy Vercel de nguoi dung xem `/front-desk`.
+2. Sau khi duyet giao dien tong quan, lam drawer thao tac phong: dat phong, nhan phong, tra phong, them dich vu/minibar, chuyen phong.
 3. Luong tra phong: yeu cau kiem phong, ghi minibar/hong hoc, cap nhat folio, thu tien con lai.
 4. Sau khi UI on dinh moi chuyen booking API sang model moi lam source of truth.
 
